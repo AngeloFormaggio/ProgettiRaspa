@@ -30,7 +30,7 @@ int CheckCategoria(Categoria categorie[], char *nomeCategoria, int nCat)
             return i;//ritorno l'indice della categoria che gia esiste
         }
     }
-    return 0;
+    return -1;
 }
 
 void AggiungiLibro(Categoria *categoria, char *bufTitolo, char *bufAutore, int bufAnno, float bufPrezzo)//puntatore alla cat a cui aggungere il libro, titolo, autore, ...
@@ -110,9 +110,11 @@ void CaricaLibri(char *nomeFile, Categoria categorie[], int *nCat)
             bufCategoria[MAX_NOME - 1] = '\0'; 
         }
 
-        if(CheckCategoria(categorie, bufCategoria, *nCat))
+        int indexCat = CheckCategoria(categorie, bufCategoria, *nCat);
+
+        if(indexCat != -1)
         {//se c'è
-            AggiungiLibro(&categorie[CheckCategoria(categorie, bufCategoria, *nCat)],bufTitolo,bufAutore,bufAnno,bufPrezzo);
+            AggiungiLibro(&categorie[indexCat],bufTitolo,bufAutore,bufAnno,bufPrezzo);
         }
         else
         {//se non c'è
@@ -173,7 +175,7 @@ void StampaXCategoria(Categoria categorie[],int nCat)
         scanf("%d", &scelta);
     }while(scelta>nCat || scelta < 0);
 
-    printf("Categoria %s:\n", categorie[scelta].nome);
+    printf("Categoria %s", categorie[scelta].nome);
     for(int i = 0; i < categorie[scelta].contLibri; i++)
     {
         printf("\nTitolo: %s, Autore: %s, Anno: %d, Prezzo: %.2f",categorie[scelta].libri[i].titolo,categorie[scelta].libri[i].autore,categorie[scelta].libri[i].anno,categorie[scelta].libri[i].prezzo);
