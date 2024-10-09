@@ -142,7 +142,9 @@ int CercaLibro(Categoria categorie[], int nCat)
 {
     char titoloRicerca[MAX_NOME];
     printf("Inserire il titolo da cercare: ");
-    scanf("%s",titoloRicerca);
+
+    fgets(titoloRicerca, sizeof(titoloRicerca), stdin);
+    titoloRicerca[strcspn(titoloRicerca, "\n")] = '\0';
 
     for(int i = 0; i < nCat; i++)
     {
@@ -171,6 +173,7 @@ int main(int argc, char* argv[])
     do{
         printf("Scegli opzione:\n1-Visualizza libri x Cat\n2-Ricerca libro\n");
         scanf("%d",&scelta);
+        getchar();
 
         switch (scelta) 
         {
