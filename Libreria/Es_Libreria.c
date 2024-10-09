@@ -127,9 +127,9 @@ void CaricaLibri(char *nomeFile, Categoria categorie[], int *nCat)
 
 }
 
-void VisualizzaXCategoria(Categoria categorie[], int numCategorie) 
+void VisualizzaXCategoria(Categoria categorie[], int nCat) 
 {
-    for (int i = 0; i < numCategorie; i++) {
+    for (int i = 0; i < nCat; i++) {
         printf("Categoria: %s\n", categorie[i].nome);
         for (int j = 0; j < categorie[i].contLibri; j++) {
             Libro *libro = &categorie[i].libri[j];
