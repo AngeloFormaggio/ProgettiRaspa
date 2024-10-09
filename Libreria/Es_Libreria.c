@@ -160,6 +160,26 @@ int CercaLibro(Categoria categorie[], int nCat)
     return 1;
 }
 
+void StampaXCategoria(Categoria categorie[],int nCat)
+{ 
+    int scelta;
+
+    do {
+        printf("\nScegli una categoria:\n");
+        for(int i = 0; i < nCat; i++)
+        {
+            printf("%d - %s\n",i,categorie[i].nome);
+        }
+        scanf("%d", &scelta);
+    }while(scelta>nCat || scelta < 0);
+
+    printf("Categoria %s:\n", categorie[scelta].nome);
+    for(int i = 0; i < categorie[scelta].contLibri; i++)
+    {
+        printf("\nTitolo: %s, Autore: %s, Anno: %d, Prezzo: %.2f",categorie[scelta].libri[i].titolo,categorie[scelta].libri[i].autore,categorie[scelta].libri[i].anno,categorie[scelta].libri[i].prezzo);
+    }
+}
+
 int main(int argc, char* argv[])
 {
     Categoria categorie [MAX_CAT];
@@ -171,7 +191,7 @@ int main(int argc, char* argv[])
     int flag = 0,scelta;
     
     do{
-        printf("Scegli opzione:\n1-Visualizza libri x Cat\n2-Ricerca libro\n");
+        printf("Scegli opzione:\n1-Visualizza libri x Cat\n2-Ricerca libro\n3-Stampa x categoria\n");
         scanf("%d",&scelta);
         getchar();
 
@@ -186,9 +206,12 @@ int main(int argc, char* argv[])
                 printf("\nLibro non presente\n");
             }
             break;
+            case 3:
+            StampaXCategoria(categorie,nCat);
+            break;
         }
 
-        printf("Ripetere?  [1]-si [0]-no\n");
+        printf("\nRipetere?  [1]-si [0]-no\n");
         scanf("%d",&flag);
 
     }while(flag);
