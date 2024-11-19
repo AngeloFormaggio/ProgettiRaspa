@@ -1,0 +1,28 @@
+[
+    {
+      "domanda": "Qual è la capitale d'Italia?",
+      "opzioni": ["Roma", "Milano", "Napoli", "Firenze"],
+      "corretta": 0
+    },
+    {
+      "domanda": "Qual è il colore del cielo?",
+      "opzioni": ["Rosso", "Blu", "Verde", "Giallo"],
+      "corretta": 1
+    },
+    {
+      "domanda": "Quanto fa 2 + 2?",
+      "opzioni": ["3", "4", "5", "6"],
+      "corretta": 1
+    },
+    {
+      "domanda": "Chi ha scritto 'La Divina Commedia'?",
+      "opzioni": ["Petrarca", "Dante", "Boccaccio", "Manzoni"],
+      "corretta": 1
+    },
+    {
+      "domanda": "Qual è il simbolo chimico dell'acqua?",
+      "opzioni": ["O", "H2O", "CO2", "H2"],
+      "corretta": 1
+    }
+]
+  
