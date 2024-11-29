@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pila ISO/OSI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Socket</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="socket.html">Cos'è una Socket?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="osi.html">Modello OSI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tcp.html">TCP vs UDP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shell.html">Reverse Shell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glossario.html">Glossario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Titolo e descrizione -->
+<div class="container mt-5 pt-4">
+    <h1 class="text-center">Modello ISO/OSI</h1>
+    
+</div>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-7">
+                <p >
+                Il modello ISO/OSI è uno standard internazionale che definisce un framework per la comunicazione tra dispositivi in rete. 
+                Creato dall'International Organization for Standardization (ISO), suddivide le operazioni di rete in sette livelli 
+                distinti, ciascuno con un ruolo specifico. Questo approccio modulare facilita l'interoperabilità tra diversi sistemi 
+                e tecnologie, fornendo una base comune per progettare e comprendere le reti di comunicazione.
+                </p>
+            </div>
+        <div class="col-md-5">
+        <img src="imgs/osi_net.jpg" alt="Foto" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+ <!-- Accordion per i livelli della Pila OSI -->
+<div class="container mt-5">
+    <div class="accordion" id="accordionPila">
+        <!-- Livello 7 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                    Livello 7: Applicazione
+                </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionPila">
+                <div class="accordion-body">
+                    <p>
+                        Il livello applicazione è l'ultimo livello della pila OSI ed è responsabile di fornire i servizi di rete direttamente agli utenti.
+                        Questo livello gestisce le richieste da parte delle applicazioni, come il browser web, il client di posta elettronica e altre applicazioni di rete.
+                        I protocolli a questo livello includono <a href="glossario.html" style="text-decoration: none;" class="text-warning">HTTP</a>, <a href="glossario.html" style="text-decoration: none;" class="text-warning">SMTP</a>, <a href="glossario.html" style="text-decoration: none;" class="text-warning">FTP</a> e <a href="glossario.html" style="text-decoration: none;" class="text-warning">DNS</a>.
+                    </p>
+                    <div class="text-center">
+                        <img src="imgs/osi_lvl7.jpg" 
+                             alt="Schema protocollo HTTP" class="img-fluid rounded">
+                        <p class="mt-2"><i>Schema che illustra il protocollo HTTP.</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Livello 6 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    Livello 6: Presentazione
+                </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionPila">
+                <div class="accordion-body">
+                    <p>
+                        Il livello di presentazione si occupa della rappresentazione, <a href="glossario.html" style="text-decoration: none;" class="text-warning">codifica</a> e <a href="glossario.html" style="text-decoration: none;" class="text-warning">cifratura</a> dei dati scambiati tra le applicazioni. 
+                        Ad esempio, converte i dati in formati comprensibili da diverse piattaforme e applica algoritmi di cifratura per garantire la sicurezza.
+                    </p>
+                    <div class="row">
+                        <div class="text-center">
+                            <img src="imgs/osi_lvl_6_2.png" alt="Codifica immagine" class="img-fluid rounded">
+                            <p class="mt-2 text-center"><i>Codifica dei file immagine.</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Livello 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading3">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    Livello 5: Sessione
+                </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionPila">
+                <div class="accordion-body">
+                    <p>
+                        Il livello di sessione gestisce le sessioni di comunicazione tra i dispositivi, sincronizzando e organizzando i flussi di dati.
+                        Ad esempio, permette di riprendere una trasmissione interrotta.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Livello 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading4">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    Livello 4: Trasporto
+                </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionPila">
+                <div class="accordion-body">
+                    <p>
+                        Il livello di trasporto gestisce la consegna affidabile dei dati tra i dispositivi. Protocolli come <a href="tcp.html" style="text-decoration: none;">TCP e UDP</a> 
+                        operano a questo livello, offrendo modalità di trasporto affidabili o a bassa latenza.
+                    </p>
+                    <div class="text-center">
+                        <img src="imgs/osi_lvl4.jpg" 
+                             alt="Protocolli TCP e UDP" class="img-fluid rounded">
+                        <p class="mt-2"><i>Confronto tra protocolli TCP e UDP.</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading5">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        Livello 3: Rete
+                    </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionPila">
+                    <div class="accordion-body">
+                        Il livello di rete è responsabile dell'instradamento dei pacchetti tra diversi dispositivi e reti. Si occupa di determinare il percorso che i pacchetti devono 
+                        seguire per arrivare a destinazione, e può operare su una rete locale o attraverso Internet.
+                        <br><br>
+                        I protocolli più noti a questo livello sono IP (Internet Protocol), che assegna gli indirizzi IP ai dispositivi, e il protocollo <a href="glossario.html" style="text-decoration: none;" class="text-warning">ICMP</a> 
+                        (Internet Control Message Protocol) che gestisce i messaggi di errore e le diagnosi, come quelli generati dai ping.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading6">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        Livello 2: Data Link
+                    </button>
+                </h2>
+                <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionPila">
+                    <div class="accordion-body">
+                        Il livello di Data Link è responsabile della trasmissione dei dati tra dispositivi sulla stessa rete fisica. Si occupa della creazione di frame, 
+                        che sono pacchetti di dati che contengono informazioni per il controllo dell'errore e per l'indirizzamento a livello di rete locale.
+                        <br><br>
+                        Gli esempi includono Ethernet e Wi-Fi, che definiscono le regole per l'accesso alla rete fisica e la gestione degli errori di trasmissione. 
+                        Questo livello è fondamentale per garantire che i dati possano essere trasmessi in modo affidabile sulla rete.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading7">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        Livello 1: Fisico
+                    </button>
+                </h2>
+                <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionPila">
+                    <div class="accordion-body">
+                        Il livello fisico è il livello più basso della pila OSI e si occupa della trasmissione dei segnali elettrici, ottici o radio tra i dispositivi. 
+                        In altre parole, si occupa dei mezzi fisici attraverso i quali i dati vengono trasmessi, come cavi, fibre ottiche e onde radio.
+                        <br><br>
+                        Le tecnologie che operano a questo livello includono Ethernet (cavi di rete), Wi-Fi (onde radio) e le interfacce di rete come le porte <a href="glossario.html" style="text-decoration: none;" class="text-warning">RJ-45</a>. 
+                        Si occupa anche della modulazione dei segnali e della codifica dei dati per garantire che possano essere correttamente interpretati dai dispositivi.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4 mb-5">
+        <hr class="my-5" style="border-top: 2px solid #ccc;">
+        <h2 class="text-center mt-4">Scopri Anche</h2>
+    </div>
+    
+    
+   <!-- Sezione delle card -->
+<div class="container mt-4 mb-5">
+    <!-- Separatore orizzontale -->
+    <hr class="my-5" style="border-top: 2px solid #ccc;">
+    <div class="row">
+      <!-- Prima card Socket-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/trasferimento.jpg" alt="Socket">
+          <div class="card-body">
+            <h5 class="card-title">SOCKET</h5>
+            <p class="card-text">Approfondisci il mondo delle socket con questa breve spiegazione, e comprendi piu a fondo le socket </p>
+            <a href="socket.html" class="btn btn-primary">Socket</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Seconda card OSI-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/osi.jpg" alt="Iso/osi">
+          <div class="card-body">
+            <h5 class="card-title">PILA ISO/OSI</h5>
+            <p class="card-text">Scopri come funzionano le comunicazioni, partendo dal livello piu basso fino ad arrivare all'utente finale</p>
+            <a href="osi.html" class="btn btn-primary">Modello Iso/Osi</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Terza card TCP-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/tcp-udp.png" alt="tcp/udp">
+          <div class="card-body">
+            <h5 class="card-title">TCP/UDP</h5>
+            <p class="card-text">Immergiti ancora piu in profondita e impara quello che sta alla base dei protocolli tcp e udp</p>
+            <a href="tcp.html" class="btn btn-primary">Tcp / Udp</a>
+          </div>
+        </div>
+      </div>
+
+      <!--quarta card reverse shell-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/security.png" alt="reverseShell">
+          <div class="card-body">
+            <h5 class="card-title">REVERSE SHELL</h5>
+            <p class="card-text">Impara come le socket possono essere usate anche nel penetration testing</p>
+            <a href="shell.html" class="btn btn-primary">Reverse Shell</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+</div>
+    
+    
+    <!-- Footer (non più fixed) -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div>
+            <p>Formaggio Angelo, 5^F</p>
+        </div>
+        <div>
+            <li>
+                <a href="#">angelo.formaggio@iisviolamarchesini.edu.it</a>
+            </li>
+            <li>
+                <a href="https://github.com/AngeloFormaggio">GitHub</a>
+            </li>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

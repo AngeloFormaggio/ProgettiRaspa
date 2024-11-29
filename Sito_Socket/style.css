@@ -1,0 +1,84 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding-top: 80px;
+}
+
+.navbar {
+    background-color: #1f1f1f; 
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5rem; /* Aumenta la dimensione della scritta "Socket" */
+}
+
+
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #e0e0e0; 
+}
+
+.navbar .nav-link:hover {
+    color: #ffb74d; /* Colore di hover per i link */
+}
+
+footer {
+    background-color: #1f1f1f; /* Colore scuro per il footer */
+    color: #e0e0e0; /* Testo chiaro per il footer */
+}
+
+footer a {
+    color: #ffb74d;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Card scure */
+.card.bg-dark {
+    background-color: #2a2a2a !important; /* Scuro per le card */
+    color: #e0e0e0; 
+}
+
+/* Modifica colore del testo nei bottoni delle card */
+.card .btn-primary {
+    background-color: #ffb74d; /* Colore giallo per il bottone */
+    border-color: #ffb74d;
+    color: #000000; /* Colore del testo del bottone in nero */
+}
+
+.card .btn-primary:hover {
+    background-color: #ff9800; /* Colore di hover per il bottone */
+    border-color: #ff9800;
+    color: #000000; /* Colore del testo del bottone in nero anche al passaggio del mouse */
+}
+
+
+/* Ottimizzazione per l'immagine */
+img.img-fluid {
+    border-radius: 8px; /* Raggio per arrotondare gli angoli dell'immagine */
+}
+
+
+.accordion-button {
+    background-color: #343a40; /* Colore di sfondo scuro per il pulsante */
+    color: #ffffff; /* Dettagli gialli per il testo del pulsante */
+   
+}
+
+.accordion-button:focus {
+    box-shadow: none; /* Rimuove l'effetto focus blu di default */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #23272b; /* Colore scuro quando il pannello è aperto */
+    color: #ffc107; /* Dettagli gialli per il testo del pulsante quando aperto */
+}
+
+.accordion-body {
+    background-color: #212529; /* Colore di sfondo scuro per il corpo dell'accordion */
+    color: #ffffff; /* Testo bianco per contrasto */
+}

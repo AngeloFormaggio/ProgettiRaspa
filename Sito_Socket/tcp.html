@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tcp / Udp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Socket</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="socket.html">Cos'è una Socket?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="osi.html">Modello OSI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tcp.html">TCP vs UDP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shell.html">Reverse Shell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glossario.html">Glossario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Corpo principale -->
+
+   <div class="container my-5">
+    <!-- Titolo principale -->
+    <div class="text-center mb-4">
+        <h1>Funzionamento dei Protocolli TCP e UDP</h1>
+        <p>Scopri in dettaglio come funzionano e quali sono le differenze principali tra TCP e UDP.</p>
+    </div>
+
+    <!-- Sezione descrittiva -->
+    <div class="row g-4">
+        <!-- TCP Card -->
+        <div class="col-lg-6">
+            <div class="card text-light bg-dark">
+                <div class="card-header text-warning">
+                    Transmission Control Protocol (TCP)
+                </div>
+                <div class="card-body">
+                    <p>TCP è un protocollo orientato alla connessione, progettato per garantire l'affidabilità della trasmissione dei dati.</p>
+                    <h5 class="card-title">Caratteristiche principali</h5>
+                    <ul>
+                        <li><strong>Connessione affidabile:</strong> TCP utilizza un processo di handshake a tre fasi per stabilire una connessione tra mittente e destinatario.</li>
+                        <li><strong>Controllo degli errori:</strong> I pacchetti persi o danneggiati vengono ritrasmessi.</li>
+                        <li><strong>Ordinamento garantito:</strong> I pacchetti vengono ricomposti nell'ordine corretto.</li>
+                    </ul>
+                    <h5 class="card-title">Utilizzo</h5>
+                    <p>TCP è ideale per applicazioni dove è essenziale garantire la consegna accurata dei dati, come:</p>
+                    <ul>
+                        <li>Browser web (HTTP)</li>
+                        <li>Browser web sicuri (HTTPS)</li>
+                        <li>Posta elettronica (SMTP, <a href="glossario.html" style="text-decoration: none;" class="text-warning">IMAP</a>)</li>
+                        <li>Trasferimento di file (FTP)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- UDP Card -->
+        <div class="col-lg-6">
+            <div class="card text-light bg-dark">
+                <div class="card-header text-warning">
+                    User Datagram Protocol (UDP)
+                </div>
+                <div class="card-body">
+                    <p>UDP è un protocollo senza connessione, progettato per velocità e semplicità, sacrificando l'affidabilità.</p>
+                    <h5 class="card-title">Caratteristiche principali</h5>
+                    <ul>
+                        <li><strong>Nessuna connessione:</strong> UDP invia i dati senza stabilire una connessione preventiva.</li>
+                        <li><strong>Velocità superiore:</strong> Minore overhead rispetto a TCP, ideale per applicazioni in tempo reale.</li>
+                        <li><strong>Nessun controllo degli errori:</strong> Non garantisce l'ordine o la consegna dei pacchetti.</li>
+                    </ul>
+                    <h5 class="card-title">Utilizzo</h5>
+                    <p>UDP è scelto per applicazioni dove la velocità è prioritaria, come:</p>
+                    <ul>
+                        <li>Streaming video e audio</li>
+                        <li>Giochi online</li>
+                        <li>DNS e altre richieste rapide</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confronto-->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card text-light bg-dark">
+                <div class="card-header text-warning">
+                    Confronto diretto tra TCP e UDP
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Caratteristica</th>
+                                    <th>TCP</th>
+                                    <th>UDP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tipo di connessione</strong></td>
+                                    <td>Orientato alla connessione</td>
+                                    <td>Senza connessione</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Affidabilità</strong></td>
+                                    <td>Garantita</td>
+                                    <td>Non garantita</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ordinamento dei dati</strong></td>
+                                    <td>Ordinato</td>
+                                    <td>Non garantito</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Velocità</strong></td>
+                                    <td>Più lento</td>
+                                    <td>Più veloce</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Applicazioni tipiche</strong></td>
+                                    <td>Web, email, FTP</td>
+                                    <td>Streaming, giochi, DNS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   <div class="container mt-4 pt-2">
+    <div class = " col-md-12">
+        <hr class="my-5" style="border-top: 2px solid #ccc;">
+        <h2 class="text-center mt-4">Scopri Anche</h2>
+    </div>
+</div>
+
+<!-- Sezione delle card -->
+<div class="container mt-4 mb-5">
+    <!-- Separatore orizzontale -->
+    <hr class="my-5" style="border-top: 2px solid #ccc;">
+    <div class="row">
+      <!-- Prima card Socket-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/trasferimento.jpg" alt="Socket">
+          <div class="card-body">
+            <h5 class="card-title">SOCKET</h5>
+            <p class="card-text">Approfondisci il mondo delle socket con questa breve spiegazione, e comprendi piu a fondo le socket </p>
+            <a href="socket.html" class="btn btn-primary">Socket</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Seconda card OSI-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/osi.jpg" alt="Iso/osi">
+          <div class="card-body">
+            <h5 class="card-title">PILA ISO/OSI</h5>
+            <p class="card-text">Scopri come funzionano le comunicazioni, partendo dal livello piu basso fino ad arrivare all'utente finale</p>
+            <a href="osi.html" class="btn btn-primary">Modello Iso/Osi</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Terza card TCP-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/tcp-udp.png" alt="tcp/udp">
+          <div class="card-body">
+            <h5 class="card-title">TCP/UDP</h5>
+            <p class="card-text">Immergiti ancora piu in profondita e impara quello che sta alla base dei protocolli tcp e udp</p>
+            <a href="tcp.html" class="btn btn-primary">Tcp / Udp</a>
+          </div>
+        </div>
+      </div>
+
+      <!--quarta card reverse shell-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/security.png" alt="reverseShell">
+          <div class="card-body">
+            <h5 class="card-title">REVERSE SHELL</h5>
+            <p class="card-text">Impara come le socket possono essere usate anche nel penetration testing</p>
+            <a href="shell.html" class="btn btn-primary">Reverse Shell</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <div>
+        <p>Formaggio Angelo, 5^F</p>
+    </div>
+    <div>
+        <li>
+            <a href="#">angelo.formaggio@iisviolamarchesini.edu.it</a>
+        </li>
+        <li>
+            <a href="https://github.com/AngeloFormaggio">GitHub</a>
+        </li>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cos'è una Socket?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Socket</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="socket.html">Cos'è una Socket?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="osi.html">Modello OSI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tcp.html">TCP vs UDP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shell.html">Reverse Shell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glossario.html">Glossario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Corpo principale -->
+<div class="container mt-4 pt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="imgs/socket_socket.png" alt="Foto" class="img-fluid">
+            <i>fonte: informaticabrutta.it</i>
+          </div>
+      <!-- Testo a sinistra -->
+      <div class="col-md-6">
+        <h1>Le Socket</h1>
+        <p>
+            Le <a href="glossario.html" style="text-decoration: none;" class="text-warning">socket</a> sono punti di comunicazione utilizzati dalle applicazioni per inviare e ricevere dati tramite una rete. In sostanza, sono dei canali virtuali che permettono a 
+            due dispositivi di comunicare, che possono essere collegati tramite una rete locale (<a href="glossario.html" style="text-decoration: none;" class="text-warning">LAN</a>) o attraverso Internet. 
+            Ogni socket è definita da un <a href="glossario.html" style="text-decoration: none;" class="text-warning">indirizzo IP</a> e un numero di <a href="glossario.html" style="text-decoration: none;" class="text-warning">porta</a>, che identificano in modo univoco il dispositivo e il servizio a cui è associato il socket.
+            Per le socket si ha un client e un server
+            tra i quali si stabilisce la connessione.<br>
+            Le socket sono ampiamente utilizzate in tutti i tipi di comunicazione di rete, inclusi web browsing, posta elettronica, streaming video e molto altro.
+        </p>   
+      </div>
+
+      <div class="col-md-6 pt-5" style="margin-top: 50px;">  
+        <h2>Tipologie di Socket</h2>
+        <p>
+            Esistono principalmente due tipologie di socket: <strong>Stream Sockets</strong> e <strong>Datagram Sockets</strong>, ognuna con caratteristiche e utilizzi differenti.
+        </p>
+        <br>
+        <h3>Stream Sockets (TCP)</h3>
+        <p>
+            Le Stream Sockets sono utilizzate per le comunicazioni basate sul protocollo <a href="tcp.html" style="text-decoration: none;" class="text-warning">TCP</a> (Transmission Control Protocol). 
+            Queste socket garantiscono una connessione stabile e affidabile tra due dispositivi. Durante la comunicazione, TCP si assicura che tutti i pacchetti di dati arrivino nell'ordine 
+            giusto, senza errori e senza perdite. È ideale per applicazioni che richiedono una trasmissione di dati sicura e ordinata, come il web browsing o la posta elettronica.<br><br>
+            Un esempio di Stream Socket è una connessione HTTP tra il browser e un server web.
+        </p>
+        <br>
+        <h3>Datagram Sockets (UDP)</h3>
+        <p>
+            Le Datagram Sockets sono utilizzate per le comunicazioni basate sul protocollo <a href="tcp.html" style="text-decoration: none;" class="text-warning">UDP</a> (User Datagram Protocol). 
+            A differenza di TCP, UDP non garantisce la consegna o l'ordine dei pacchetti. Questo rende UDP più veloce ma meno sicuro rispetto a TCP. Le Datagram Sockets sono adatte per 
+            applicazioni che necessitano di alta velocità e tollerano la perdita di qualche pacchetto di dati, come lo streaming video o i giochi online in tempo reale.<br><br>
+            Un esempio di Datagram Socket è un'applicazione di video streaming che invia pacchetti di dati a intervalli regolari.
+        </p>
+
+    </div>
+
+    <div class="col-md-6 pt-5" style="margin-top: 80px;">
+        <img src="imgs/socket_tcp.png" alt="Foto" class="img-fluid">   
+    </div>
+
+    <div class="col-md-6 pt-5" style="margin-top: 80px;">
+        <img src="imgs/socket_ports.com_.jpg" alt="Foto" class="img-fluid">    
+    </div>
+
+     <div class="col-md-6 pt-5" style="margin-top: 80px;">
+        <h3>Socket e Porta</h3>
+        <p>
+            Una socket è definita dalla combinazione di un indirizzo IP e un numero di porta. L'indirizzo IP identifica univocamente il dispositivo sulla rete, 
+            mentre il numero di porta identifica un'applicazione o un servizio specifico su quel dispositivo. Ad esempio, il servizio HTTP di un server web è tipicamente associato alla porta 80,
+             mentre il servizio HTTPS si trova sulla porta 443.<br><br>
+            Le porte vanno da 0 a 65535 e sono suddivise in tre categorie principali:
+            <ul>
+                <li><strong>Porte Well Known:</strong> vanno da 0 a 1023 e sono riservate per i servizi standard (ad esempio, la porta 80 per HTTP).</li>
+                <li><strong>Porte registrate:</strong> vanno da 1024 a 49151 e sono usate per servizi non standard o per applicazioni specifiche.</li>
+                <li><strong>Porte dinamiche o private:</strong> vanno da 49152 a 65535 e sono utilizzate per connessioni temporanee o per applicazioni client.</li>
+            </ul>
+        </p>
+        <br>
+    </div>
+    <div style="margin-top: 100px;">
+        <h2>Come Funzionano le Socket?</h2>
+        <p>
+            Il funzionamento di una socket implica due fasi principali: la connessione e la trasmissione dei dati. La prima fase prevede che una socket sul <a href="glossario.html" style="text-decoration: none;" class="text-warning">client</a> 
+            si connetta a una socket sul <a href="glossario.html" style="text-decoration: none;" class="text-warning">server</a> utilizzando l'indirizzo IP e il numero di porta del server. Una volta stabilita la connessione, i dati possono essere 
+            inviati e ricevuti attraverso la socket utilizzando il protocollo scelto <a href="tcp.html" style="text-decoration: none;" class="text-warning">(TCP o UDP)</a>.<br><br>
+            In generale, una socket invia dati in un formato di byte (stream di bit) e i dati devono essere elaborati dall'applicazione per essere comprensibili. 
+            La gestione delle connessioni e la trasmissione dei dati è generalmente trasparente per gli utenti, che interagiscono con 
+            l'applicazione senza preoccuparsi di come i dati vengano effettivamente trasferiti attraverso la rete.
+        </p>
+    </div>
+    </div>
+    
+</div>
+
+<div class="container mt-4 pt-2">
+    <div class = " col-md-12">
+        <hr class="my-5" style="border-top: 2px solid #ccc;">
+        <h2 class="text-center mt-4">Scopri Anche</h2>
+    </div>
+</div>
+
+<!-- Sezione delle card -->
+<div class="container mt-4 mb-5">
+    <!-- Separatore orizzontale -->
+    <hr class="my-5" style="border-top: 2px solid #ccc;">
+    <div class="row">
+      <!-- Prima card Socket-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/trasferimento.jpg" alt="Socket">
+          <div class="card-body">
+            <h5 class="card-title">SOCKET</h5>
+            <p class="card-text">Approfondisci il mondo delle socket con questa breve spiegazione, e comprendi piu a fondo le socket </p>
+            <a href="socket.html" class="btn btn-primary">Socket</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Seconda card OSI-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/osi.jpg" alt="Iso/osi">
+          <div class="card-body">
+            <h5 class="card-title">PILA ISO/OSI</h5>
+            <p class="card-text">Scopri come funzionano le comunicazioni, partendo dal livello piu basso fino ad arrivare all'utente finale</p>
+            <a href="osi.html" class="btn btn-primary">Modello Iso/Osi</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Terza card TCP-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/tcp-udp.png" alt="tcp/udp">
+          <div class="card-body">
+            <h5 class="card-title">TCP/UDP</h5>
+            <p class="card-text">Immergiti ancora piu in profondita e impara quello che sta alla base dei protocolli tcp e udp</p>
+            <a href="tcp.html" class="btn btn-primary">Tcp / Udp</a>
+          </div>
+        </div>
+      </div>
+
+      <!--quarta card reverse shell-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/security.png" alt="reverseShell">
+          <div class="card-body">
+            <h5 class="card-title">REVERSE SHELL</h5>
+            <p class="card-text">Impara come le socket possono essere usate anche nel penetration testing</p>
+            <a href="shell.html" class="btn btn-primary">Reverse Shell</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <div>
+        <p>Formaggio Angelo, 5^F</p>
+    </div>
+    <div>
+        <li>
+            <a href="#">angelo.formaggio@iisviolamarchesini.edu.it</a>
+        </li>
+        <li>
+            <a href="https://github.com/AngeloFormaggio">GitHub</a>
+        </li>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

