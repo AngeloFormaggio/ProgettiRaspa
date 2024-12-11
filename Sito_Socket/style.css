@@ -35,11 +35,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Card scure */
-.card.bg-dark {
-    background-color: #2a2a2a !important; /* Scuro per le card */
-    color: #e0e0e0; 
-}
+
 
 /* Modifica colore del testo nei bottoni delle card */
 .card .btn-primary {
