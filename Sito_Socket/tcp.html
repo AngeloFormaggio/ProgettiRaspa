@@ -38,58 +38,59 @@
         <p>Scopri in dettaglio come funzionano e quali sono le differenze principali tra TCP e UDP.</p>
     </div>
 
-    <!-- Sezione descrittiva -->
-    <div class="row g-4">
-        <!-- TCP Card -->
-        <div class="col-lg-6">
-            <div class="card text-light bg-dark">
-                <div class="card-header text-warning">
-                    Transmission Control Protocol (TCP)
-                </div>
-                <div class="card-body">
-                    <p>TCP è un protocollo orientato alla connessione, progettato per garantire l'affidabilità della trasmissione dei dati.</p>
-                    <h5 class="card-title">Caratteristiche principali</h5>
-                    <ul>
-                        <li><strong>Connessione affidabile:</strong> TCP utilizza un processo di handshake a tre fasi per stabilire una connessione tra mittente e destinatario.</li>
-                        <li><strong>Controllo degli errori:</strong> I pacchetti persi o danneggiati vengono ritrasmessi.</li>
-                        <li><strong>Ordinamento garantito:</strong> I pacchetti vengono ricomposti nell'ordine corretto.</li>
-                    </ul>
-                    <h5 class="card-title">Utilizzo</h5>
-                    <p>TCP è ideale per applicazioni dove è essenziale garantire la consegna accurata dei dati, come:</p>
-                    <ul>
-                        <li>Browser web (HTTP)</li>
-                        <li>Browser web sicuri (HTTPS)</li>
-                        <li>Posta elettronica (SMTP, <a href="glossario.html" style="text-decoration: none;" class="text-warning">IMAP</a>)</li>
-                        <li>Trasferimento di file (FTP)</li>
-                    </ul>
-                </div>
+   <!-- Sezione descrittiva -->
+<div class="row g-4">
+    <!-- TCP Card -->
+    <div class="col-lg-6 d-flex">
+        <div class="card text-light bg-dark h-100 w-100">
+            <div class="card-header text-warning">
+                Transmission Control Protocol (TCP)
             </div>
-        </div>
-        <!-- UDP Card -->
-        <div class="col-lg-6">
-            <div class="card text-light bg-dark">
-                <div class="card-header text-warning">
-                    User Datagram Protocol (UDP)
-                </div>
-                <div class="card-body">
-                    <p>UDP è un protocollo senza connessione, progettato per velocità e semplicità, sacrificando l'affidabilità.</p>
-                    <h5 class="card-title">Caratteristiche principali</h5>
-                    <ul>
-                        <li><strong>Nessuna connessione:</strong> UDP invia i dati senza stabilire una connessione preventiva.</li>
-                        <li><strong>Velocità superiore:</strong> Minore overhead rispetto a TCP, ideale per applicazioni in tempo reale.</li>
-                        <li><strong>Nessun controllo degli errori:</strong> Non garantisce l'ordine o la consegna dei pacchetti.</li>
-                    </ul>
-                    <h5 class="card-title">Utilizzo</h5>
-                    <p>UDP è scelto per applicazioni dove la velocità è prioritaria, come:</p>
-                    <ul>
-                        <li>Streaming video e audio</li>
-                        <li>Giochi online</li>
-                        <li>DNS e altre richieste rapide</li>
-                    </ul>
-                </div>
+            <div class="card-body">
+                <p>TCP è un protocollo orientato alla connessione, progettato per garantire l'affidabilità della trasmissione dei dati.</p>
+                <h5 class="card-title">Caratteristiche principali</h5>
+                <ul>
+                    <li><strong>Connessione affidabile:</strong> TCP utilizza un processo di handshake a tre fasi per stabilire una connessione tra mittente e destinatario.</li>
+                    <li><strong>Controllo degli errori:</strong> I pacchetti persi o danneggiati vengono ritrasmessi.</li>
+                    <li><strong>Ordinamento garantito:</strong> I pacchetti vengono ricomposti nell'ordine corretto.</li>
+                </ul>
+                <h5 class="card-title">Utilizzo</h5>
+                <p>TCP è ideale per applicazioni dove è essenziale garantire la consegna accurata dei dati, come:</p>
+                <ul>
+                    <li>Browser web (HTTP)</li>
+                    <li>Browser web sicuri (HTTPS)</li>
+                    <li>Posta elettronica (SMTP, <a href="glossario.html" style="text-decoration: none;" class="text-warning">IMAP</a>)</li>
+                    <li>Trasferimento di file (FTP)</li>
+                </ul>
             </div>
         </div>
     </div>
+    <!-- UDP Card -->
+    <div class="col-lg-6 d-flex">
+        <div class="card text-light bg-dark h-100 w-100">
+            <div class="card-header text-warning">
+                User Datagram Protocol (UDP)
+            </div>
+            <div class="card-body">
+                <p>UDP è un protocollo senza connessione, progettato per velocità e semplicità, sacrificando l'affidabilità.</p>
+                <h5 class="card-title">Caratteristiche principali</h5>
+                <ul>
+                    <li><strong>Nessuna connessione:</strong> UDP invia i dati senza stabilire una connessione preventiva.</li>
+                    <li><strong>Velocità superiore:</strong> Minore overhead rispetto a TCP, ideale per applicazioni in tempo reale.</li>
+                    <li><strong>Nessun controllo degli errori:</strong> Non garantisce l'ordine o la consegna dei pacchetti.</li>
+                </ul>
+                <h5 class="card-title">Utilizzo</h5>
+                <p>UDP è scelto per applicazioni dove la velocità è prioritaria, come:</p>
+                <ul>
+                    <li>Streaming video e audio</li>
+                    <li>Giochi online</li>
+                    <li><a href="glossario.html" style="text-decoration: none;" class="text-warning">DNS</a> e altre richieste rapide</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Confronto-->
     <div class="row mt-5">
