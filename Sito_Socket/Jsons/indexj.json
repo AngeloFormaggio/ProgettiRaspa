@@ -1,0 +1,7 @@
+{
+    "title": "Le Socket",
+    "content": "Le socket sono interfacce di comunicazione che permettono a due programmi, generalmente in esecuzione su dispositivi diversi, di scambiarsi dati attraverso una rete. Una socket è composta da un indirizzo IP e un numero di porta.<br><br>Esistono due principali tipi di <a href='socket.html' style='text-decoration: none;' class='text-warning'>socket</a>:<br>TCP Socket e UDP Socket.<br><br>Le socket sono utilizzate in molte applicazioni, come la navigazione web, la posta elettronica, e nelle comunicazioni di rete in generale.",
+    "imageSrc": "imgs/vario-656954.610x431.jpg",
+    "imageAlt": "FotoIndex"
+}
+  

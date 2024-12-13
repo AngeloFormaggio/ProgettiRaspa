@@ -1,0 +1,67 @@
+<!-- Corpo principale -->
+<div class="container mt-4 pt-5">
+  <div class="row align-items-center">
+    <!-- Immagine -->
+    <div class="col-12 col-md-6 order-1 order-md-1">
+      <img src="imgs/socket_socket.png" alt="Foto" class="img-fluid">
+      <i>Fonte: informaticabrutta.it</i>
+    </div>
+    <!-- Testo -->
+    <div class="col-12 col-md-6 order-2 order-md-2">
+      <h1>Le Socket</h1>
+      <p>
+        Le ing video e molto altro.
+      </p>
+    </div>
+  </div>
+
+  <div class="row align-items-center pt-5">
+    <!-- Testo -->
+    <div class="col-12 col-md-6 order-2 order-md-1">
+      <h2>Tipologie di Socket</h2>
+        <p>
+            atteristiche e utilizzi differenti.
+        </p>
+        <br>
+        <h3>Stream Sockets (TCP)</h3>
+        <p>
+            Lil browser e un server web.
+        </p>
+        <br>
+        <h3>Datagram Sockets (UDP)</h3>
+        <p>
+            Le Dainvia pacchetti di dati a intervalli regolari.
+        </p>
+    </div>
+    <!-- Immagine -->
+    <div class="col-12 col-md-6 order-1 order-md-2">
+      <img src="imgs/socket_tcp.png" alt="Foto" class="img-fluid">
+    </div>
+  </div>
+
+  <div class="row align-items-center pt-5">
+    <!-- Immagine -->
+    <div class="col-12 col-md-6 order-1">
+      <img src="imgs/socket_ports.com_.jpg" alt="Foto" class="img-fluid">
+    </div>
+    <!-- Testo -->
+    <div class="col-12 col-md-6 order-2">
+      <h2>Socket e Porta</h2>
+        <p>
+            Una sncipali:
+            <ul>
+                <li><strong>Porte Well Known:</strong> vanno da 0 a 1023 e sono riservate per i servizi standard (ad esempio, la porta 80 per HTTP).</li>
+                <li><strong>Porte registrate:</strong> vanno da 1024 a 49151 e sono usate per servizi non standard o per applicazioni specifiche.</li>
+                <li><strong>Porte dinamiche o private:</strong> vanno da 49152 a 65535 e sono utilizzate per connessioni temporanee o per applicazioni client.</li>
+            </ul>
+        </p>
+        <br>
+    </div>
+  </div>
+  <div style="margin-top: 100px;">
+    <h2>Come Funzionano le Socket?</h2>
+    <p>
+        Il fu trasferiti attraverso la rete.
+    </p>
+</div>
+</div>
